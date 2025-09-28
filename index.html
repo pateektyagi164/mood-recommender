@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodScape - Your Personal Recommendation Engine</title>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to our Stylesheet -->
+    <link rel="stylesheet" href="home.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Defer script loading for better performance -->
+    <script src="home.js" defer></script>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">MoodScape</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+                <li class="nav-item"><a href="#app" class="nav-link">The App</a></li>
+                <li class="nav-item"><a href="#" class="nav-link nav-link-button">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Mood. Your Moment.</h1>
+                <p class="hero-subtitle">Discover movies, music, books, and activities perfectly matched to how you feel, right now.</p>
+                <a href="#app" class="btn btn-primary">Find Your Vibe</a>
+            </div>
+            <div class="hero-background"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card hidden">
+                        <div class="feature-icon">🎧</div>
+                        <h3 class="feature-title">Tell Us Your Mood</h3>
+                        <p class="feature-description">Select from a range of moods like Happy, Calm, or Energetic to get started.</p>
+                    </div>
+                    <div class="feature-card hidden">
+                        <div class="feature-icon">🎬</div>
+                        <h3 class="feature-title">Get Instant Recommendations</h3>
+                        <p class="feature-description">We scour the internet for top-rated movies, trending music, and acclaimed books.</p>
+                    </div>
+                    <div class="feature-card hidden">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="feature-title">Personalize Your Taste</h3>
+                        <p class="feature-description">Our AI learns from your likes and dislikes to provide truly personalized suggestions over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main App Section -->
+        <section id="app" class="app-section">
+            <div class="container">
+                <h2 class="section-title">Let's Find Something For You</h2>
+                <p class="section-subtitle">Select a mood below to get started.</p>
+
+                <div class="mood-selection-container">
+                    <!-- Positive (High Energy) -->
+                    <div class="mood-category">
+                        <h3 class="mood-category-title">Positive (High Energy)</h3>
+                        <div class="mood-buttons-grid">
+                            <button class="mood-btn" data-mood="Happy">😊 Happy</button>
+                            <button class="mood-btn" data-mood="Energetic">⚡ Energetic</button>
+                            <button class="mood-btn" data-mood="Excited">🤩 Excited</button>
+                            <button class="mood-btn" data-mood="Motivated">🔥 Motivated</button>
+                        </div>
+                    </div>
+                    <!-- Positive (Low Energy) -->
+                    <div class="mood-category">
+                        <h3 class="mood-category-title">Positive (Low Energy)</h3>
+                        <div class="mood-buttons-grid">
+                            <button class="mood-btn" data-mood="Calm">😌 Calm</button>
+                            <button class="mood-btn" data-mood="Content">😇 Content</button>
+                            <button class="mood-btn" data-mood="Nostalgic">🤔 Nostalgic</button>
+                            <button class="mood-btn" data-mood="Cozy">☕ Cozy</button>
+                        </div>
+                    </div>
+                    <!-- Negative (High Energy) -->
+                    <div class="mood-category">
+                        <h3 class="mood-category-title">Negative (High Energy)</h3>
+                        <div class="mood-buttons-grid">
+                            <button class="mood-btn" data-mood="Stressed">😫 Stressed</button>
+                            <button class="mood-btn" data-mood="Angry">😡 Angry</button>
+                            <button class="mood-btn" data-mood="Overwhelmed">🤯 Overwhelmed</button>
+                        </div>
+                    </div>
+                    <!-- Negative (Low Energy) -->
+                    <div class="mood-category">
+                        <h3 class="mood-category-title">Negative (Low Energy)</h3>
+                        <div class="mood-buttons-grid">
+                            <button class="mood-btn" data-mood="Sad">😢 Sad</button>
+                            <button class="mood-btn" data-mood="Bored">😑 Bored</button>
+                            <button class="mood-btn" data-mood="Tired">😴 Tired</button>
+                            <button class="mood-btn" data-mood="Lonely">💔 Lonely</button>
+                        </div>
+                    </div>
+                    <!-- Introspective & Complex -->
+                    <div class="mood-category">
+                        <h3 class="mood-category-title">Introspective & Complex</h3>
+                        <div class="mood-buttons-grid">
+                            <button class="mood-btn" data-mood="Curious">🧐 Curious</button>
+                            <button class="mood-btn" data-mood="Reflective">🤔 Reflective</button>
+                            <button class="mood-btn" data-mood="Hopeful">✨ Hopeful</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Results Area -->
+                <div id="recommendation-area" class="recommendation-area">
+                    <div class="results-grid">
+                        <!-- Movie Recommendations Card -->
+                        <div id="movie-results" class="result-card">
+                            <h4><i class="fa-solid fa-film"></i> Movies</h4>
+                            <div class="card-content">
+                                <p class="placeholder-text">Select a mood to see movie recommendations.</p>
+                            </div>
+                        </div>
+                        <!-- Music Recommendations Card -->
+                        <div id="music-results" class="result-card">
+                            <h4><i class="fa-solid fa-music"></i> Music</h4>
+                            <div class="card-content">
+                                <p class="placeholder-text">Select a mood to see music recommendations.</p>
+                            </div>
+                        </div>
+                        <!-- Book Recommendations Card -->
+                        <div id="book-results" class="result-card">
+                            <h4><i class="fa-solid fa-book-open"></i> Books</h4>
+                            <div class="card-content">
+                                <p class="placeholder-text">Select a mood to see book recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MoodScape. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
